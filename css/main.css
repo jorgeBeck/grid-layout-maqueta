@@ -14,9 +14,26 @@ nav {
 	background: orange;
 	/* padding: 0 50px; */
 	/* margin: 0 50px; */
-	margin: 15px 10%;
+	margin: 15px 12%;
 }
 div.main-container {
 	padding-top: 120px;
 	display: grid;
+	grid-template-columns: 12% 1fr 12%;
+	grid-template-areas: "catalog content ."
+						 "footer footer footer";
+}
+.item {
+	border: solid 1px red;
+	background: blue;
+}
+.side-catalog {
+	grid-area: catalog;
+}
+.page-content {
+	grid-area: content;
+}
+footer {
+	grid-area: footer;
+	background: gray;
 }
