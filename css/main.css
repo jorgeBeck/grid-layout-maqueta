@@ -1,0 +1,22 @@
+body {
+	margin: 0;
+}
+
+header {
+	top: 0px;
+	position: fixed;
+	background: #43caff66;
+	width: 100vw;
+	/* padding: 0 50px; */
+}
+nav {
+	height: 80px;
+	background: orange;
+	/* padding: 0 50px; */
+	/* margin: 0 50px; */
+	margin: 15px 10%;
+}
+div.main-container {
+	padding-top: 120px;
+	display: grid;
+}
