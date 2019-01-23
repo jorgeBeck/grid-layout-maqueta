@@ -4,36 +4,51 @@
 body {
 	margin: 0;
 }
+h1 {
+	word-break: break-all;
+	font-size: 7em;
+}
+h2 {
+	font-size: 5em;
+}
 .main-header-styles {
 	background: var(--main-header-bgcolor);
 }
-/* Header dinámico con position fixed */
-header {
-	display: none;
-	top: 0px;
-	position: fixed;
-	width: 100vw;
-}
 /* Header estático con GRID */
-div.header {
+header {
 	grid-area: header;
 }
 nav {
-	height: 80px;
+	height: 30px;
 	background: orange;
+	/* margin-top: 15px;
+	margin-bottom: 15px;
+	margin-right: 12%;
+	margin-left: 12%; */
 	margin: 15px 12%;
 }
 div.main-container {
 	display: grid;
 	grid-template-columns: 12% 1fr 12%;
-	grid-template-rows: 110px 
-						1fr 
-						40px;
-	grid-template-areas: "header header header"
-						 "catalog page_content ."
-						 "footer footer footer";
+	grid-template-rows: 60px
+						1fr;
+	grid-template-areas: "header 		header 			header"
+						 "catalog 		page_content 	x"
+						 "footer 		footer 			footer";
 	margin-top: 0;
+	grid-gap: 5px;
 	min-height: 100vh;
+	/* Alineados */
+	/*
+		start: Contenido hacia la izquierda
+		end: Contenido hacia la derecha
+		center: Contenido a en medio
+		stretch (defecto): Estira el contenido al tamaño del grid (el de arriba)
+	*/
+	/* Alineado horizontal */
+	justify-items: stretch;
+	/* Alineado verticao */
+	align-items: stretch;
 }
 section {
 	border: solid 1px red;
@@ -41,21 +56,30 @@ section {
 .side-catalog {
 	grid-area: catalog;
 }
+.x {
+	grid-area: x;
+}
 .page-content {
 	grid-area: page_content;
+	/*overflow-y: scroll;
+	max-height: 60vh;*/
 }
 footer {
 	grid-area: footer;
+	border: solid 1px blue;
+	margin: 50px;
 	background: gray;
-	padding: 20px;
 }
 
 @media screen and (max-width: 768px) {
-	div.header {
-		display: none;
-		grid-area: header;
-	}
+	/* Header dinámico con position fixed */
 	header {
-		display: block;
+		/* display: none; */
+		position: fixed;
+		
+		width: 100vw;
 	}
+	/* header {
+		display: block;
+	} */
 }
