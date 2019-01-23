@@ -4,17 +4,19 @@
 body {
 	margin: 0;
 }
+.main-header-styles {
+	background: var(--main-header-bgcolor);
+}
 /* Header dinámico con position fixed */
 header {
+	display: none;
 	top: 0px;
 	position: fixed;
-	background: var(--main-header-bgcolor);
 	width: 100vw;
 }
 /* Header estático con GRID */
 div.header {
 	grid-area: header;
-	background: var(--main-header-bgcolor);
 }
 nav {
 	height: 80px;
@@ -24,7 +26,9 @@ nav {
 div.main-container {
 	display: grid;
 	grid-template-columns: 12% 1fr 12%;
-	grid-template-rows: 110px 1fr 40px;
+	grid-template-rows: 110px 
+						1fr 
+						40px;
 	grid-template-areas: "header header header"
 						 "catalog page_content ."
 						 "footer footer footer";
@@ -44,4 +48,14 @@ footer {
 	grid-area: footer;
 	background: gray;
 	padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+	div.header {
+		display: none;
+		grid-area: header;
+	}
+	header {
+		display: block;
+	}
 }
