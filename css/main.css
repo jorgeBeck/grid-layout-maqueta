@@ -1,39 +1,47 @@
+:root {
+	--main-header-bgcolor: #43caff66;
+}
 body {
 	margin: 0;
 }
-
+/* Header dinámico con position fixed */
 header {
 	top: 0px;
 	position: fixed;
-	background: #43caff66;
+	background: var(--main-header-bgcolor);
 	width: 100vw;
-	/* padding: 0 50px; */
+}
+/* Header estático con GRID */
+div.header {
+	grid-area: header;
+	background: var(--main-header-bgcolor);
 }
 nav {
 	height: 80px;
 	background: orange;
-	/* padding: 0 50px; */
-	/* margin: 0 50px; */
 	margin: 15px 12%;
 }
 div.main-container {
-	padding-top: 120px;
 	display: grid;
 	grid-template-columns: 12% 1fr 12%;
-	grid-template-areas: "catalog content ."
+	grid-template-rows: 110px 1fr 40px;
+	grid-template-areas: "header header header"
+						 "catalog page_content ."
 						 "footer footer footer";
+	margin-top: 0;
+	min-height: 100vh;
 }
-.item {
+section {
 	border: solid 1px red;
-	background: blue;
 }
 .side-catalog {
 	grid-area: catalog;
 }
 .page-content {
-	grid-area: content;
+	grid-area: page_content;
 }
 footer {
 	grid-area: footer;
 	background: gray;
+	padding: 20px;
 }

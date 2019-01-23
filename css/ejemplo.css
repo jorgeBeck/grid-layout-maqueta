@@ -1,0 +1,57 @@
+body {
+	margin: 0;
+}
+
+.hg__header {
+	padding: 10px;
+	background: red;
+	grid-area: header;
+}
+.hg__footer {
+	padding: 10px;
+	background: yellow;
+	grid-area: footer;
+}
+.hg__main {
+	padding: 10px;
+	background: green;
+	grid-area: main;
+}
+.hg__left {
+	padding: 10px;
+	background: yellowgreen;
+	grid-area: navigation;
+}
+.hg__right {
+	padding: 10px;
+	background: blue;
+	grid-area: ads;
+}
+
+.hg {
+	display: grid;
+	grid-template-areas: "header header header"
+	                     "navigation main ads"
+	                     "footer footer footer";
+	grid-template-columns: 150px 1fr 150px;
+	grid-template-rows: 100px 
+						1fr
+						30px;
+	min-height: 100vh;
+}
+
+@media screen and (max-width: 600px) {
+	.hg {
+		grid-template-areas: "header"
+		                     "navigation"
+		                     "main"
+		                     "ads"
+		                     "footer";
+		grid-template-columns: 100%;
+		grid-template-rows: 100px 
+							50px 
+							1fr
+							50px 
+							30px;
+	}
+}
